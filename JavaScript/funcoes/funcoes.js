@@ -21,7 +21,7 @@ function ParImpar(a)
 }
 
 function validarEmail(email){
-  var check=/\w@\w.com/;
+  var check=/\w@\w+.com/;
 
   return email.search(check);
 
