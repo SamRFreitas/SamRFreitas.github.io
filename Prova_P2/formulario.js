@@ -7,6 +7,7 @@ window.addEventListener("load",function(){
 function Calcula(){
 	dataChegada = document.getElementById('dataC');
 	dataSaida = document.getElementById('dataS');
+	quantidadeQuartos = document.getElementById('quantidadeQ').value;
 	numeroHospedes = document.getElementById('quantidadeH').value;
 
 	var dataC = new Date(dataChegada.value).getTime();
@@ -17,18 +18,27 @@ function Calcula(){
 
 	var dias = dataS - dataC;
 
+	var quantQ = parseInt(quantidadeQuartos);
 	var quantH = parseInt(numeroHospedes);
 	
 	if(quantH > 1)
 		var valorAdicional = (quantH-1) * 60;
+	else 
+		var valorAdicional = 0; 
+
+	if(quantQ > 1)
+		var valorPorQuarto = quantQ * 149;
 	else
-		var valorAdicional = 0;
+		var valorPorQuarto = 149;
+
+	if(quantQ > 1 && quantH > 1)
+		var valorAdicional = valorAdicional * 2;
 
 
 	var resultado = 0;
 
-	var resultado = 149 + (valorAdicional * dias);
+	var resultado = (valorPorQuarto + valorAdicional) * dias;
 
-	alert(" Valor Adicional: "+ valorAdicional +" Dias: "+ dias + " Resultado: " + resultado );
+	alert("Valor por quarto: " +valorPorQuarto + " Valor Adicional: "+ valorAdicional +" Dias: "+ dias + " Resultado: " + resultado );
 
 }
