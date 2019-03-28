@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="formulario.js"> </script>
+
+    <title></title>
+  </head>
+  <body>
+    <form name="form" method="post">
+        Nome: <input type="text" id="nome" >
+        <br><br>
+        Email: <input type="text" id="email">
+        <br><br>
+        Confimação de Email: <input type="text" id="cEmail">
+        <br><br>
+        Data de Chegada: <input type="date" id="dataC">
+        <br><br>
+        Data de Saída: <input type="date" id="dataS">
+        <br><br>
+        Selecione Número de Hóspedes(Máximo de 5 Hospedes por quarto): 
+        <select id="quantidadeH">
+           <option value="">Quantidade de Hospedes</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+        </select>
+        <br><br>
+        <input type="submit" id="salvar" value="Enviar"> 
+    </form>
+
+  </body>
+</html>
